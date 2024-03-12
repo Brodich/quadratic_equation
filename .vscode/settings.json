@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "quadratic_equation.h": "c",
+        "*.check": "c",
+        "math.h": "c"
+    }
+}

@@ -1,0 +1,51 @@
+#include "quadratic_equation.h"
+#include <stdio.h>
+#include <math.h>
+
+#test solve_equation_1
+    double a = 1;
+    double b = 2;
+    double c = 1;
+    double res_x1 = -1;
+    double res_x2 = -1;
+
+    QuadraticRoots roots;
+    roots = solve_equation(a,b,c);
+
+    ck_assert_float_eq(roots.x1, res_x1);
+    ck_assert_float_eq(roots.x2, res_x2);
+
+
+#test solve_equation_2
+    double a = 4;
+    double b = 2;
+    double c = 1;
+
+    QuadraticRoots roots;
+    roots = solve_equation(a,b,c);
+    ck_assert_float_eq(isnan(roots.x1), 1);
+    ck_assert_float_eq(isnan(roots.x2), 1);
+
+#test solve_equation_3
+    double a = 1;
+    double b = 4;
+    double c = 3;
+    double res_x1 = -1;
+    double res_x2 = -3;
+
+    QuadraticRoots roots;
+    roots = solve_equation(a,b,c);
+
+    ck_assert_float_eq(roots.x1, res_x1);
+    ck_assert_float_eq(roots.x2, res_x2);
+
+#test solve_equation_4
+    double a = 4;
+    double b = 2;
+    double c = 1;
+
+    QuadraticRoots roots;
+    roots = solve_equation(a,b,c);
+
+    ck_assert_float_eq(isnan(roots.x1), 1);
+    ck_assert_float_eq(isnan(roots.x2), 1);
